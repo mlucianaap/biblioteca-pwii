@@ -17,9 +17,6 @@ body {
     font-family: Arial, Helvetica, sans-serif;   
     color: #2B2136;
     padding-bottom: 10vh;
-    padding-top: 3vh;
-    padding: 0;
-    margin: 0;
 }
 
 nav {
@@ -50,7 +47,7 @@ a:link {
 }
 
 a:visited {
-    color: white;
+    color: black;
 }
 
 a.active {
@@ -63,7 +60,6 @@ a:hover {
 }
 
 .container {
-    margin-bottom: 100px;
     width: 50%;
     background-color: white;
     padding: 3rem;
@@ -87,17 +83,10 @@ a:hover {
 .form-header .sair {
     background-color: #2B2136;
     color: white;
-    font-size: 25px;
+    font-size: 16px;
     padding: 10px 10px;
     border-radius: 5px;
-}
-
-.form-header .sair:hover {
-    background-color: #2B2136;
-    color: white;
-    font-size: 25px;
-    padding: 15px 15px;
-    border-radius: 5px;
+    transition: 0.5s;
 }
 
 .form-header p {
@@ -183,11 +172,11 @@ button:hover {
 
 .filter {
     display: flex;
-    align-content: center;
+    justify-content: space-between;
 }
 
 .filter button {
-    margin: 1rem 0;
+    margin: 1rem 0 0 1rem;
 }
 table {
     margin-top: 1rem;
@@ -202,11 +191,6 @@ th {
     border-bottom: 1px solid #F8F7F9;
     border-top: 1px solid #F8F7F9;
     height: 3rem;
-}
-
-a {
-    text-decoration: none;
-    color: white;
 }
 
 .title {
@@ -230,77 +214,22 @@ a {
     color:#EA6055;
 }
 
-#fade {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.6);
-    z-index: 5;
-}
-
-#modal {
-position: fixed;
-left: 50%;
-top: 50%;
-transform: translate(-50%, -50%);
-width: 500px;
-max-width: 90%;
-background-color: #fff;
-padding: 1.2rem;
-border-radius: 0.5rem;
-z-index: 10;
-}
-
-#fade,
-#modal {
-transition: 0.5s;
-opacity: 1;
-pointer-events: all;
-}
-
-.modal-header {
-display: flex;
-justify-content: space-between;
-align-items: center;
-border-bottom: 1px solid #ccc;
-margin-bottom: 1rem;
-padding-bottom: 1rem;
-}
-
-.modal-body p {
-margin-bottom: 1rem;
-}
-
-#modal.hide,
-#fade.hide {
-opacity: 0;
-pointer-events: none;
-}
-
-#modal.hide {
-top: 0;
-}
-
 .about {
     margin: 30px 20px 20px 20px;
     width: 90%;   
     height: 100%;
-    background-color: #B9BAFE; 
-
 }
 
 .about h1{ 
-    margin: 30px 0px 20px 40px;
+    margin: 30px 0px 20px 0px;
 }
 
 .about h2{ 
-    margin: 30px 0px 20px 40px;
+    margin: 30px 0px 20px 0px;
 }
 
 .about h3{ 
-    margin: 30px 0px 20px 40px;
+    margin: 30px 0px 20px 0px;
 }
 
 .about li {
@@ -311,14 +240,15 @@ top: 0;
     margin: 10px 0px 50px 10px;
 }
 
-.books {
-    margin: 50px 0px 0px 0px;
-    width: 100%;
-    background-color: white;
-}
-
 #edit{
     margin-top: 50px;
+}
+
+.errors {
+    color: white;
+    background-color: #EA6055;
+    border-radius: 10px;
+    padding: 1rem;
 }
 
 @media (min-width: 280px) and (max-width: 900px) {

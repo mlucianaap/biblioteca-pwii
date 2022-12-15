@@ -1,5 +1,5 @@
 <div class="form-header">
-	<p>Olá, {{{user.name}}}</p>
+	<p>Olá, {{{user.name}}}!</p>
 	<a href="/logout" class="sair">Sair</a>
 </div> 
 <div class="container">
@@ -18,11 +18,13 @@
 				<button type="submit">Cadastrar</button>
 			</div>
 	</form>
-	<div class="books">
-		<h2>Seus Livros</h2>
+	
+	<h2>Seus Livros</h2>
+	<div class="filter">
 		<form action="/home/{{user.idusers}}/filtro" method='POST' id="form">
-			<div class="input-box">
+			<div class="filter-box">
 				<select id="status" name="status" required>
+					<option value=""></option>
 					<option value="Já li">Já li</option>
 					<option value="Estou lendo">Estou lendo</option>
 					<option value="Quero ler">Quero ler</option>
@@ -30,6 +32,7 @@
 				<button type="submit" id="button">Buscar</button>
 			</div>
 		</form>
+		<a href="/home/{{user.idusers}}"><button>REMOVER FILTRO</button></a>
 	</div>
 	{{#if booksUser}}
 		<table>
