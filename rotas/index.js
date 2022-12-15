@@ -18,8 +18,6 @@ rotas.post('/signup', async (req, res) => {
         user => user.email == email
     )[0];
 
-    console.log(emailIgual);
-
     if (emailIgual === undefined) {
         const user = {
             name,
@@ -86,8 +84,6 @@ rotas.post('/home/:idusers/filtro', async (req, res) => {
         book => book.idusers == idusers && book.status == status
     );
 
-    console.log(req.body);
-
     res.render('home', { booksUser, title: 'Controle de Livros', user });
 });
 
@@ -132,8 +128,6 @@ rotas.post('/home/edit', (req, res) => {
         status,
         idusers
     }
-
-    console.log(req.body);
 
     editBook(book);
 
