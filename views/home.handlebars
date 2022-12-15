@@ -18,6 +18,7 @@
 				<button type="submit">Cadastrar</button>
 			</div>
 	</form>
+	<div class="books">
 	<h2>Seus Livros</h2>
 	<form action="/home/{{user.idusers}}/filtro" method='POST' id="form">
 		<div class="input-box">
@@ -26,7 +27,7 @@
 				<option value="Estou lendo">Estou lendo</option>
 				<option value="Quero ler">Quero ler</option>
 			</select>
-			<button type="submit">Buscar</button>
+			<button type="submit" id="button">Buscar</button>
 		</div>
 	</form>
 	{{#if booksUser}}
@@ -58,4 +59,5 @@
 	{{else}}
         <p>Você ainda não tem nenhum livro cadastrado.</p>
     {{/if}}
+	</div>
 </div>
