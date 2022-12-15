@@ -1,0 +1,61 @@
+<div class="form-header">
+	<p>Olá, {{{user.name}}}</p>
+	<a href="/logout" class="sair">Sair</a>
+</div> 
+<div class="container">
+	<form action="/home/insert" method='POST' id="form">
+		<h1>Cadastre seus Livros</h1>
+			<div class="input-box">
+				<input name="title" type="text" placeholder="Título" required>
+				<input name="pages" type="number" placeholder="Quantidade de páginas" required>
+				<label for="status">Qual o status do livro?</label>
+				<select id="status" name="status" required>
+					<option value="Já li">Já li</option>
+					<option value="Estou lendo">Estou lendo</option>
+					<option value="Quero ler">Quero ler</option>
+				</select>
+				<input name="idusers" style="display: none;" value="{{user.idusers}}">
+				<button type="submit">Cadastrar</button>
+			</div>
+	</form>
+	<h2>Seus Livros</h2>
+	<form action="/home/{{user.idusers}}/filtro" method='POST' id="form">
+		<div class="input-box">
+			<select id="status" name="status" required>
+				<option value="Já li">Já li</option>
+				<option value="Estou lendo">Estou lendo</option>
+				<option value="Quero ler">Quero ler</option>
+			</select>
+			<button type="submit">Buscar</button>
+		</div>
+	</form>
+	{{#if booksUser}}
+		<table>
+			<tr>
+				<th>Título</th>
+				<th>Páginas</th>
+				<th>Status</th>
+				<th>Ações</th>
+			</tr>
+			{{#each booksUser}}
+				<tr>
+					<td name="idusers" style="display: none;">{{idusers}}</td>
+					<td name="id" style="display: none;">{{idbooks}}</td>
+					<td name="title" class="title">{{title}}</td>
+					<td name="pages" class="pages">{{pages}}</td>
+					<td name="status" class="status">{{status}}</td>
+					<td class="acoes">
+						<a href="/home/edit/{{idbooks}}">
+							<i class="fa-solid fa-pen-to-square" id="editar"></i>
+						</a>
+						<a id="open-modal" href="/home/{{idusers}}/delete/{{idbooks}}">
+							<i class="fa-solid fa-trash" id="trash"></i>
+						</a>
+					</td>
+				</tr>
+			{{/each}}
+		</table>
+	{{else}}
+        <p>Você ainda não tem nenhum livro cadastrado.</p>
+    {{/if}}
+</div>

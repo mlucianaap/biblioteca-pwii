@@ -1,0 +1,35 @@
+<nav>
+	<a href="/">
+		<div class="form-header">
+			<div class="header1">
+				<img src="../public/img/logo.png" alt="">
+			</div>
+			<div class="header2">
+				<h1>Biblioteca</h1>
+				<h2>Controle de Livros</h2>
+			</div>
+		</div>
+	</a>
+	<ul>
+		<li><a href="/signup" class="active">Cadastro</a></li>
+		<li><a href="/sobre">Sobre</a></li>
+		<li><a href="tel:+558533430202" target="_blank">(85) 3343-0202</a></li>
+	</ul>
+</nav>
+<div class="container">
+	<form action="/signup" method='POST' id="form">
+		<h1>Cadastrar Usuário</h1>		
+		<div class="input-box">
+			<input name="name" type="text" placeholder="Nome" required>
+			<input name="email" type="email" placeholder="Email" required>
+			<input name="password" type="password" placeholder="Senha" required>
+			<button type="submit">Cadastrar</button>
+		</div>
+		{{#if error}}
+			<div class="errors">
+				<div class="error-background"></div>
+				<span>{{error}}</span>
+			</div>
+		{{/if}}
+	</form>
+</div>
