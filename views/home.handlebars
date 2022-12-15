@@ -18,17 +18,23 @@
 				<button type="submit">Cadastrar</button>
 			</div>
 	</form>
-	<h2>Seus Livros</h2>
-	<form action="/home/{{user.idusers}}/filtro" method='POST' id="form">
-		<div class="input-box">
-			<select id="status" name="status" required>
-				<option value="Já li">Já li</option>
-				<option value="Estou lendo">Estou lendo</option>
-				<option value="Quero ler">Quero ler</option>
-			</select>
-			<button type="submit">Buscar</button>
-		</div>
-	</form>
+	
+	<h2 id="seusLivros">Seus Livros</h2>
+	<div class="filter">
+		<form action="/home/{{user.idusers}}/filtro" method='POST' id="form">
+			<div class="filter-box">
+				<select id="status" name="status" required>
+					<option value=""></option>
+					<option value="Já li">Já li</option>
+					<option value="Estou lendo">Estou lendo</option>
+					<option value="Quero ler">Quero ler</option>
+				</select>
+				<button type="submit">Buscar</button>
+			</div>
+		</form>
+		<a id="filter" href="/home/{{user.idusers}}"><button>Remover Filtro</button></a>
+	</div>
+
 	{{#if booksUser}}
 		<table>
 			<tr>
@@ -39,8 +45,8 @@
 			</tr>
 			{{#each booksUser}}
 				<tr>
-					<td name="idusers" style="display: none;">{{idusers}}</td>
-					<td name="id" style="display: none;">{{idbooks}}</td>
+					<td id="idusers" name="idusers" style="display: none;">{{idusers}}</td>
+					<td id="idbooks" name="id" style="display: none;">{{idbooks}}</td>
 					<td name="title" class="title">{{title}}</td>
 					<td name="pages" class="pages">{{pages}}</td>
 					<td name="status" class="status">{{status}}</td>
