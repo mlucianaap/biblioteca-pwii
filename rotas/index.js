@@ -140,5 +140,9 @@ rotas.post('/home/edit', (req, res) => {
     res.redirect(`/home/${idusers}`);
 });
 
+rotas.get('/sobre', async (req, res) => {
+    res.render('about', { title: 'Sobre' });
+});
+
 
 module.exports = rotas;
