@@ -19,7 +19,7 @@
 **Como executar?**<br>
 No terminal, clone o projeto:
 ```console
-git clone https://github.com/mlucianaap/crud-books.git
+git clone https://github.com/mlucianaap/biblioteca-pwii.git
 ```
 
 Instale as dependências do projeto:
